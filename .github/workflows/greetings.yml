@@ -3,14 +3,14 @@ name: Greetings
 on: [pull_request_target, issues]
 
 jobs:
-  greeting:
-    runs-on: ubuntu-latest
-    permissions:
-      issues: write
-      pull-requests: write
-    steps:
-    - uses: actions/first-interaction@v1
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        issue-message: "Well done! We have come this far together keep growing"
-        pr-message: "Well done! We have come this far together keep growing"
+    greeting:
+        runs-on: ubuntu-latest
+        permissions:
+            issues: write
+            pull-requests: write
+        steps:
+            - uses: actions/first-interaction@v1
+              with:
+                  repo-token: ${{ secrets.GITHUB_TOKEN }}
+                  issue-message: 'I know how it difficult it was to learn from the session LIVE videos but we made it together and learnt a lot of stuff. Great Job! keep working hard and keep growing...'
+                  pr-message: 'I know how it difficult it was to learn from the session LIVE videos but we made it together and learnt a lot of stuff. Great Job! keep working hard and keep growing...'
