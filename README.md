@@ -1,6 +1,6 @@
 # LBD - Learn By Doing
 
-Learn By Doing is an LMS(learning management system) platform built by all the students who are from the LIVE Sessions given on https://suboorkhan.com
+Learn By Doing is an LMS(learning management system) platform built by all the students who were taking the LIVE Sessions given on https://suboorkhan.com
 
 ## Getting Started
 
