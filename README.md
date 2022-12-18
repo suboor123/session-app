@@ -10,13 +10,13 @@ Clone the project and Sign up
 
 A step by step series of examples that tell you how to get a development env running
 
-Install dependencies
+1) Install dependencies
 
 ```
 npm install
 ```
 
-Setup firebase config
+2) Setup firebase config
 
 create a file `firebase-config.js` in the main directory and paste your firebase configuration in there
 
@@ -38,7 +38,7 @@ export { firebaseApp, firebaseDatabase };
 
 ```
 
-Start the react app
+3) Start the react app
 
 ```
 npm run dev
