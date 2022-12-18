@@ -16,6 +16,27 @@ Install dependencies
 npm install
 ```
 
+Setup firebase config
+create a file firebase-config.js and paste your firebase configuration in there
+
+```
+import { initializeApp } from 'firebase/app';
+import { getAnalytics } from 'firebase/analytics';
+import { getDatabase } from 'firebase/database'
+
+const firebaseConfig = {
+   // YOUR FIREBASE CONFIGURATION
+};
+
+
+const firebaseApp = initializeApp(firebaseConfig);
+const analytics = getAnalytics(firebaseApp);
+const firebaseDatabase = getDatabase(firebaseApp)
+
+export { firebaseApp, firebaseDatabase };
+
+```
+
 Start the react app
 
 ```
