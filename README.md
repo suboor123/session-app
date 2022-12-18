@@ -17,7 +17,8 @@ npm install
 ```
 
 Setup firebase config
-create a file firebase-config.js and paste your firebase configuration in there
+
+create a file `firebase-config.js` in the main directory and paste your firebase configuration in there
 
 ```
 import { initializeApp } from 'firebase/app';
