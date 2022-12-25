@@ -6,20 +6,30 @@ import { Main } from './layouts/main';
 import { Wrapper, WrapperContainer, WrapperInner } from './layouts/Wrapper';
 import { SignUp } from './pages/auth/view/Signup';
 import 'rsuite/dist/rsuite.min.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { SignIn } from './pages/auth/view/SignIn';
 
 function App() {
-    return <SignUp />;
     return (
-        <Wrapper>
-            <WrapperInner>
-                <Sidebar />
-                <WrapperContainer>
-                    <Header />
-                    <Main></Main>
-                </WrapperContainer>
-            </WrapperInner>
-        </Wrapper>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<SignUp />} />
+                <Route path="/login" element={<SignIn />} />
+            </Routes>
+        </BrowserRouter>
     );
+    // return <SignUp />;
+    // return (
+    //     <Wrapper>
+    //         <WrapperInner>
+    //             <Sidebar />
+    //             <WrapperContainer>
+    //                 <Header />
+    //                 <Main></Main>
+    //             </WrapperContainer>
+    //         </WrapperInner>
+    //     </Wrapper>
+    // );
 }
 
 export default App;

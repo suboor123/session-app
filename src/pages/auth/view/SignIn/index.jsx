@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import ToastContainer from 'rsuite/esm/toaster/ToastContainer';
 import { authHelper } from '../../helpers';
 import { useToaster } from 'rsuite';
-import { Notification } from 'rsuite';
 import AuthLayout from '../AuthLayout';
+import { Link } from 'react-router-dom';
 
-export const SignUp = () => {
+export const SignIn = () => {
     const toaster = useToaster();
 
     const [formVal, setFormVal] = useState({
@@ -20,45 +19,18 @@ export const SignUp = () => {
         });
     };
 
-    const pushError = (errorHeader, errorContent) => {
-        toaster.push(
-            <Notification
-                header={errorHeader}
-                placement="topStart"
-                closable
-                type="error"
-            >
-                {errorContent}
-            </Notification>,
-            {
-                placement: 'bottomEnd',
-            }
-        );
-    };
-
     const onSubmit = async () => {
-        console.log('working');
         if (formVal.email === '' || formVal.password === '') {
-            //TODO: Use toastr lib
-            // alert('Invalid email or password!');
-            // console.log("here");
-            pushError(
-                'Signup Error',
-                'Either username or password is empty !!!!'
-            );
+            alert('Email and password are required.');
             return;
         }
-        authHelper.signUp(formVal.email, formVal.password).then(
+        authHelper.signIn(formVal.email, formVal.password).then(
             (res) => {
+                alert('successfully logged in');
                 console.log(res);
-                alert('successfully sign up');
             },
             (err) => {
-                // alert(err);
-                pushError(
-                    'Signup Error',
-                    'Problem with username or password !!!!'
-                );
+                alert(err.code);
             }
         );
     };
@@ -97,7 +69,7 @@ export const SignUp = () => {
                     className="btn btn-primary btn-block mt-4"
                     onClick={onSubmit}
                 >
-                    Sign Up
+                    Sign In
                 </button>
                 <div className="text-light small mt-4">
                     By clicking "Sign Up", you agree to our
@@ -109,8 +81,8 @@ export const SignUp = () => {
             </form>
             {/* [ Form ] End */}
             <div className="text-center text-muted">
-                Already have an account?
-                <a href="javascript:void(0)">Sign In</a>
+                Need an account?
+                <Link to="/">Sign Up</Link>
             </div>
         </AuthLayout>
     );

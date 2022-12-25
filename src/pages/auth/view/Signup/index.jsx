@@ -5,11 +5,14 @@ import { useToaster } from 'rsuite';
 import { Notification } from 'rsuite';
 import AuthLayout from '../AuthLayout';
 import { toastr } from '../../../../lib/Toastr';
+import { Link } from 'react-router-dom';
+import { userHelper } from '../../../user/helpers';
 
 export const SignUp = () => {
     const toaster = useToaster();
 
     const [formVal, setFormVal] = useState({
+        username: '',
         email: '',
         password: '',
     });
@@ -22,13 +25,23 @@ export const SignUp = () => {
     };
 
     const onSubmit = async () => {
-        if (formVal.email === '' || formVal.password === '') {
+        if (
+            formVal.email === '' ||
+            formVal.password === '' ||
+            formVal.username === ''
+        ) {
             alert('Invalid form');
             return;
         }
         authHelper.signUp(formVal.email, formVal.password).then(
             (res) => {
-                alert('Successfully logged in');
+                const id = res.user.uid;
+                userHelper.createUser(id, {
+                    username: formVal.username,
+                    email: formVal.email,
+                });
+
+                alert('Successfully Sign up.');
             },
             (err) => {
                 alert(err.code);
@@ -45,7 +58,13 @@ export const SignUp = () => {
             <form className="my-5">
                 <div className="form-group">
                     <label className="form-label">Your name</label>
-                    <input type="text" className="form-control" />
+                    <input
+                        type="text"
+                        className="form-control"
+                        value={formVal.username}
+                        onChange={handleInputChange}
+                        name="username"
+                    />
                     <div className="clearfix" />
                 </div>
                 <div className="form-group">
@@ -88,7 +107,7 @@ export const SignUp = () => {
             {/* [ Form ] End */}
             <div className="text-center text-muted">
                 Already have an account?
-                <a href="javascript:void(0)">Sign In</a>
+                <Link to="/login">Sign In</Link>
             </div>
         </AuthLayout>
     );
