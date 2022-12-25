@@ -5,6 +5,11 @@ import { UserRole } from '../constants';
 export const userHelper = {
     path: 'user/',
 
+    /**
+     * Creates a new user in firebase realtime database
+     * @param {*} uid
+     * @param {*} user
+     */
     createUser(uid, user) {
         user.role = UserRole.Student;
         set(ref(firebaseDb, this.path + uid), user);
