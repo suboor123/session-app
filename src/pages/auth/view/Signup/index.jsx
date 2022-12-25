@@ -4,6 +4,7 @@ import { authHelper } from '../../helpers';
 import { useToaster } from 'rsuite';
 import { Notification } from 'rsuite';
 import AuthLayout from '../AuthLayout';
+import { toastr } from '../../../../lib/Toastr';
 
 export const SignUp = () => {
     const toaster = useToaster();
@@ -20,45 +21,17 @@ export const SignUp = () => {
         });
     };
 
-    const pushError = (errorHeader, errorContent) => {
-        toaster.push(
-            <Notification
-                header={errorHeader}
-                placement="topStart"
-                closable
-                type="error"
-            >
-                {errorContent}
-            </Notification>,
-            {
-                placement: 'bottomEnd',
-            }
-        );
-    };
-
     const onSubmit = async () => {
-        console.log('working');
         if (formVal.email === '' || formVal.password === '') {
-            //TODO: Use toastr lib
-            // alert('Invalid email or password!');
-            // console.log("here");
-            pushError(
-                'Signup Error',
-                'Either username or password is empty !!!!'
-            );
+            alert('Invalid form');
             return;
         }
         authHelper.signUp(formVal.email, formVal.password).then(
             (res) => {
-                console.log(res);
-                alert('successfully sign up');
+                alert('Successfully logged in');
             },
             (err) => {
-                // alert(err);
-                pushError(
-                    'Signup Error',
-                    'Problem with username or password !!!!'
-                );
+                alert(err.code);
             }
         );
     };
