@@ -7,7 +7,7 @@ import { Wrapper, WrapperContainer, WrapperInner } from './layouts/Wrapper';
 import { SignUp } from './pages/auth/view/Signup';
 
 function App() {
-    return <SignUp />;
+    return <SignIn />;
     return (
         <Wrapper>
             <WrapperInner>
