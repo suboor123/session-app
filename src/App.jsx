@@ -5,9 +5,10 @@ import Sidebar from './components/Sidebar';
 import { Main } from './layouts/main';
 import { Wrapper, WrapperContainer, WrapperInner } from './layouts/Wrapper';
 import { SignUp } from './pages/auth/view/Signup';
+import 'rsuite/dist/rsuite.min.css';
 
 function App() {
-    return <SignIn />;
+    return <SignUp />;
     return (
         <Wrapper>
             <WrapperInner>
