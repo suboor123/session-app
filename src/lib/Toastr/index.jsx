@@ -1,4 +1,4 @@
-import { Notification, useToaster } from 'rsuite';
+import { Notification, toaster } from 'rsuite';
 
 export const toastr = {
     success(heading, content) {
