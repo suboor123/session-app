@@ -4,6 +4,7 @@ import AuthLayout from '../AuthLayout';
 import { toastr } from '@/lib/Toastr';
 import { Link } from 'react-router-dom';
 import { userHelper } from '../../../user/helpers';
+import LoadingSpinner from '@/lib/LoadingSpinner';
 
 export const SignUp = () => {
     const [formVal, setFormVal] = useState({
@@ -28,6 +29,7 @@ export const SignUp = () => {
             toastr.error('Invalid form', 'All fields are required');
             return;
         }
+        LoadingSpinner.show();
         authHelper.signUp(formVal.email, formVal.password).then(
             (res) => {
                 const id = res.user.uid;
@@ -35,10 +37,11 @@ export const SignUp = () => {
                     username: formVal.username,
                     email: formVal.email,
                 });
-
+                LoadingSpinner.hide();
                 toastr.success('Congratulations!', 'Successfully Sign up.');
             },
             (err) => {
+                LoadingSpinner.hide();
                 toastr.error('Something went wrong!', err.code);
             }
         );

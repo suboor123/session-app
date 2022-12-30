@@ -4,6 +4,7 @@ import AuthLayout from '../AuthLayout';
 import { Link, useNavigate } from 'react-router-dom';
 import { toastr } from '@/lib/Toastr';
 import { userHelper } from '@/pages/user/helpers';
+import LoadingSpinner from '@/lib/LoadingSpinner';
 
 export const SignIn = () => {
     const navigateTo = useNavigate();
@@ -25,14 +26,17 @@ export const SignIn = () => {
             toastr.error('Invalid fields', 'Email and password are required.');
             return;
         }
+        LoadingSpinner.show();
         authHelper.signIn(formVal.email, formVal.password).then(
             async (res) => {
                 const user = await userHelper.syncUserById(res.user.uid);
                 authHelper.setCurrentUser({ id: res.user.uid, ...user });
                 toastr.success('Welcome', 'Successfully logged in');
+                LoadingSpinner.hide();
                 navigateTo('/dashboard');
             },
             (err) => {
+                LoadingSpinner.hide();
                 toastr.error('Something went wrong!', err.code);
             }
         );
