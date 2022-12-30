@@ -23,6 +23,7 @@ function App() {
                 <Route path="/" element={<SignUp />} />
                 <Route path="/login" element={<SignIn />} />
                 <Route path="/dashboard" element={<PrivateOutlet />}>
+                    {/* Define private routes here */}
                     <Route path="" element={<Dashboard />} />
                     <Route path="user" element={<Dashboard />} />
                 </Route>
