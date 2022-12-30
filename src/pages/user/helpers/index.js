@@ -14,4 +14,11 @@ export const userHelper = {
         user.role = UserRole.Student;
         set(ref(firebaseDb, this.path + uid), user);
     },
+
+    /**
+     * Check wether the user is authenticated or not
+     */
+    get isAuthenticated() {
+        return localStorage.getItem('user') !== null;
+    },
 };

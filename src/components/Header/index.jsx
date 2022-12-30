@@ -10,7 +10,7 @@ export const Header = () => {
             >
                 <span className="app-brand-logo demo">
                     <img
-                        src="assets/img/logo-dark.png"
+                        src="./assets/img/logo-dark.png"
                         alt="Brand Logo"
                         className="img-fluid"
                     />
@@ -170,7 +170,7 @@ export const Header = () => {
                                     className="list-group-item list-group-item-action media d-flex align-items-center"
                                 >
                                     <img
-                                        src="assets/img/avatars/6-small.png"
+                                        src="./assets/img/avatars/6-small.png"
                                         className="d-block ui-w-40 rounded-circle"
                                         alt
                                     />
@@ -188,7 +188,7 @@ export const Header = () => {
                                     className="list-group-item list-group-item-action media d-flex align-items-center"
                                 >
                                     <img
-                                        src="assets/img/avatars/4-small.png"
+                                        src="./assets/img/avatars/4-small.png"
                                         className="d-block ui-w-40 rounded-circle"
                                         alt
                                     />
@@ -207,7 +207,7 @@ export const Header = () => {
                                     className="list-group-item list-group-item-action media d-flex align-items-center"
                                 >
                                     <img
-                                        src="assets/img/avatars/5-small.png"
+                                        src="./assets/img/avatars/5-small.png"
                                         className="d-block ui-w-40 rounded-circle"
                                         alt
                                     />
@@ -225,7 +225,7 @@ export const Header = () => {
                                     className="list-group-item list-group-item-action media d-flex align-items-center"
                                 >
                                     <img
-                                        src="assets/img/avatars/11-small.png"
+                                        src="./assets/img/avatars/11-small.png"
                                         className="d-block ui-w-40 rounded-circle"
                                         alt
                                     />
@@ -260,7 +260,7 @@ export const Header = () => {
                         >
                             <span className="d-inline-flex flex-lg-row-reverse align-items-center align-middle">
                                 <img
-                                    src="assets/img/avatars/1.png"
+                                    src="./assets/img/avatars/1.png"
                                     alt
                                     className="d-block ui-w-30 rounded-circle"
                                 />
