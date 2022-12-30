@@ -27,9 +27,9 @@ export const SignIn = () => {
         }
         authHelper.signIn(formVal.email, formVal.password).then(
             async (res) => {
-                toastr.success('Welcome', 'successfully logged in');
                 const user = await userHelper.syncUserById(res.user.uid);
                 authHelper.setCurrentUser({ id: res.user.uid, ...user });
+                toastr.success('Welcome', 'Successfully logged in');
                 navigateTo('/dashboard');
             },
             (err) => {

@@ -36,7 +36,7 @@ export const userHelper = {
 
     /**
      * Check if user role is admin
-     *@returns {boolean}
+     * @returns {boolean}
      */
     get isAdmin() {
         const user = localStorage.getItem('user');
