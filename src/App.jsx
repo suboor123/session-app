@@ -26,7 +26,10 @@ function App() {
                 <Route path="/register" element={<SignUp />} />
                 <Route path="/login" element={<SignIn />} />
                 <Route path="/dashboard" element={<PrivateOutlet />}>
-                    {/* Define private routes here */}
+                    {/*
+                     * Define private routes here
+                     * Rest of the application routes going to declare here
+                     */}
                     <Route path="" element={<Dashboard />} />
                     <Route path="user" element={<Dashboard />} />
                 </Route>
