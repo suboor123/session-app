@@ -19,7 +19,7 @@ export const authHelper = {
         return signInWithEmailAndPassword(firebaseAuth, email, password);
     },
 
-    saveUserLocalStorage(uid) {
+    setCurrentUser(uid) {
         const user = { uid: uid };
         localStorage.setItem('user', JSON.stringify(user));
     },

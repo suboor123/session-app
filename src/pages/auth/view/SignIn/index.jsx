@@ -28,7 +28,7 @@ export const SignIn = () => {
         authHelper.signIn(formVal.email, formVal.password).then(
             (res) => {
                 alert('successfully logged in');
-                authHelper.saveUserLocalStorage(res.user.uid);
+                authHelper.setCurrentUser(res.user.uid);
                 navigateTo('/dashboard');
             },
             (err) => {
