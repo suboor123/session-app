@@ -10,6 +10,7 @@ const Footer = () => {
                         with <i className="fas fa-heart text-danger mr-2" />
                     </span>
                 </div>
+
                 <div>
                     <a href="javascript:" className="footer-link pt-3">
                         About Us

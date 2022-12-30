@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { authHelper } from '../../helpers';
 import AuthLayout from '../AuthLayout';
 import { Link, useNavigate } from 'react-router-dom';
-import { toastr } from '@/lib/Toastr';
+import { toastr } from '@/lib/toastr';
 import { userHelper } from '@/pages/user/helpers';
-import LoadingSpinner from '@/lib/LoadingSpinner';
+import LoadingSpinner from '@/lib/loadingSpinner';
 
 export const SignIn = () => {
     const navigateTo = useNavigate();

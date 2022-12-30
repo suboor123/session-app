@@ -1,5 +1,9 @@
 import { Notification, toaster } from 'rsuite';
 
+/**
+ * Toastr library to display message in the notification
+ */
+
 export const toastr = {
     success(heading, content) {
         execToastr(heading, content, 'success');

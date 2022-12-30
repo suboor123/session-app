@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { authHelper } from '../../helpers';
 import AuthLayout from '../AuthLayout';
-import { toastr } from '@/lib/Toastr';
+import { toastr } from '@/lib/toastr';
 import { Link } from 'react-router-dom';
 import { userHelper } from '../../../user/helpers';
-import LoadingSpinner from '@/lib/LoadingSpinner';
+import LoadingSpinner from '@/lib/loadingSpinner';
 
 export const SignUp = () => {
     const [formVal, setFormVal] = useState({
