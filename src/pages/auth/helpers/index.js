@@ -2,7 +2,6 @@ import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
 } from 'firebase/auth';
-// import { firebaseAuth } from '../../../firebase-config';
 import { firebaseAuth } from '../../../firebase-config';
 
 export const authHelper = {
@@ -18,5 +17,10 @@ export const authHelper = {
 
     signIn(email, password) {
         return signInWithEmailAndPassword(firebaseAuth, email, password);
+    },
+
+    saveUserLocalStorage(uid) {
+        const user = { uid: uid };
+        localStorage.setItem('user', JSON.stringify(user));
     },
 };

@@ -8,6 +8,8 @@ import { SignUp } from './pages/auth/view/Signup';
 import 'rsuite/dist/rsuite.min.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { SignIn } from './pages/auth/view/SignIn';
+import Dashboard from './pages/dashboard/view/Dashboard';
+import PrivateRouter from './components/PrivateRouter';
 
 function App() {
     return (
@@ -15,6 +17,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<SignUp />} />
                 <Route path="/login" element={<SignIn />} />
+                <Route path="/dashboard" element={<Dashboard />} />
             </Routes>
         </BrowserRouter>
     );
