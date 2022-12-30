@@ -29,8 +29,7 @@ export const authHelper = {
      * Set current user id to local storage of the browser
      * @param {*} uid
      */
-    setCurrentUser(uid) {
-        const user = { uid: uid };
+    setCurrentUser(user) {
         localStorage.setItem('user', JSON.stringify(user));
     },
 };

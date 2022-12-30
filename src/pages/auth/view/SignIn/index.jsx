@@ -3,13 +3,14 @@ import { authHelper } from '../../helpers';
 import AuthLayout from '../AuthLayout';
 import { Link, useNavigate } from 'react-router-dom';
 import { toastr } from '@/lib/Toastr';
+import { userHelper } from '@/pages/user/helpers';
 
 export const SignIn = () => {
     const navigateTo = useNavigate();
 
     const [formVal, setFormVal] = useState({
-        email: '',
-        password: '',
+        email: 'suboork100@gmail.com',
+        password: '123456789',
     });
 
     const handleInputChange = (e) => {
@@ -25,9 +26,10 @@ export const SignIn = () => {
             return;
         }
         authHelper.signIn(formVal.email, formVal.password).then(
-            (res) => {
+            async (res) => {
                 toastr.success('Welcome', 'successfully logged in');
-                authHelper.setCurrentUser(res.user.uid);
+                const user = await userHelper.syncUserById(res.user.uid);
+                authHelper.setCurrentUser({ id: res.user.uid, ...user });
                 navigateTo('/dashboard');
             },
             (err) => {
