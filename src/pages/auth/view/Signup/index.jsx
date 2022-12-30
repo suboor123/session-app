@@ -1,14 +1,11 @@
 import { useState } from 'react';
 import { authHelper } from '../../helpers';
-import { useToaster } from 'rsuite';
 import AuthLayout from '../AuthLayout';
 import { toastr } from '@/lib/Toastr';
 import { Link } from 'react-router-dom';
 import { userHelper } from '../../../user/helpers';
 
 export const SignUp = () => {
-    const toaster = useToaster();
-
     const [formVal, setFormVal] = useState({
         username: '',
         email: '',

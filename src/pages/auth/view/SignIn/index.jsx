@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import { authHelper } from '../../helpers';
-import { useToaster } from 'rsuite';
 import AuthLayout from '../AuthLayout';
-import { Link, Navigate, redirect, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toastr } from '@/lib/Toastr';
 
 export const SignIn = () => {
-    const toaster = useToaster();
     const navigateTo = useNavigate();
 
     const [formVal, setFormVal] = useState({
