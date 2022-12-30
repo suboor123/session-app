@@ -1,10 +1,8 @@
 import { useState } from 'react';
-import ToastContainer from 'rsuite/esm/toaster/ToastContainer';
 import { authHelper } from '../../helpers';
 import { useToaster } from 'rsuite';
-import { Notification } from 'rsuite';
 import AuthLayout from '../AuthLayout';
-import { toastr } from '../../../../lib/Toastr';
+import { toastr } from '@/lib/Toastr';
 import { Link } from 'react-router-dom';
 import { userHelper } from '../../../user/helpers';
 
@@ -30,7 +28,7 @@ export const SignUp = () => {
             formVal.password === '' ||
             formVal.username === ''
         ) {
-            alert('Invalid form');
+            toastr.error('Invalid form', 'All fields are required');
             return;
         }
         authHelper.signUp(formVal.email, formVal.password).then(
@@ -41,10 +39,10 @@ export const SignUp = () => {
                     email: formVal.email,
                 });
 
-                alert('Successfully Sign up.');
+                toastr.success('Congratulations!', 'Successfully Sign up.');
             },
             (err) => {
-                alert(err.code);
+                toastr.error('Something went wrong!', err.code);
             }
         );
     };

@@ -26,7 +26,7 @@ export const authHelper = {
     },
 
     /**
-     * Set current user to local storage of the browser
+     * Set current user id to local storage of the browser
      * @param {*} uid
      */
     setCurrentUser(uid) {

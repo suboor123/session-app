@@ -3,6 +3,7 @@ import { authHelper } from '../../helpers';
 import { useToaster } from 'rsuite';
 import AuthLayout from '../AuthLayout';
 import { Link, Navigate, redirect, useNavigate } from 'react-router-dom';
+import { toastr } from '@/lib/Toastr';
 
 export const SignIn = () => {
     const toaster = useToaster();
@@ -22,17 +23,17 @@ export const SignIn = () => {
 
     const onSubmit = async () => {
         if (formVal.email === '' || formVal.password === '') {
-            alert('Email and password are required.');
+            toastr.error('Invalid fields', 'Email and password are required.');
             return;
         }
         authHelper.signIn(formVal.email, formVal.password).then(
             (res) => {
-                alert('successfully logged in');
+                toastr.success('Welcome', 'successfully logged in');
                 authHelper.setCurrentUser(res.user.uid);
                 navigateTo('/dashboard');
             },
             (err) => {
-                alert(err.code);
+                toastr.error('Something went wrong!', err.code);
             }
         );
     };
