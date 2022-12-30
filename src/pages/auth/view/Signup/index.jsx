@@ -3,8 +3,8 @@ import { authHelper } from '../../helpers';
 import AuthLayout from '../AuthLayout';
 import { toastr } from '@/lib/toastr';
 import { Link } from 'react-router-dom';
-import { userHelper } from '../../../user/helpers';
 import LoadingSpinner from '@/lib/loadingSpinner';
+import { userHelper } from '@/pages/user/helpers';
 
 export const SignUp = () => {
     const [formVal, setFormVal] = useState({
