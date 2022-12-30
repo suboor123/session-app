@@ -9,7 +9,6 @@ import 'rsuite/dist/rsuite.min.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { SignIn } from './pages/auth/view/SignIn';
 import Dashboard from './pages/dashboard/view/Dashboard';
-import PrivateRouter from './components/PrivateRouter';
 
 function App() {
     return (
