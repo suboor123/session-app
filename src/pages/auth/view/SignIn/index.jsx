@@ -2,10 +2,11 @@ import { useState } from 'react';
 import { authHelper } from '../../helpers';
 import { useToaster } from 'rsuite';
 import AuthLayout from '../AuthLayout';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, redirect, useNavigate } from 'react-router-dom';
 
 export const SignIn = () => {
     const toaster = useToaster();
+    const navigateTo = useNavigate();
 
     const [formVal, setFormVal] = useState({
         email: '',
@@ -27,7 +28,8 @@ export const SignIn = () => {
         authHelper.signIn(formVal.email, formVal.password).then(
             (res) => {
                 alert('successfully logged in');
-                console.log(res);
+                authHelper.setCurrentUser(res.user.uid);
+                navigateTo('/dashboard');
             },
             (err) => {
                 alert(err.code);
