@@ -8,11 +8,7 @@ const Sidebar = () => {
         >
             <div className="app-brand demo">
                 <span className="app-brand-logo demo">
-                    <img
-                        src="assets/img/logo.png"
-                        alt="Brand Logo"
-                        className="img-fluid"
-                    />
+                    <img src="assets/img/logo.png" className="img-fluid" />
                 </span>
                 <a
                     href="index.html"

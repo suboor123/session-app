@@ -17,10 +17,13 @@ function PrivateOutlet() {
 }
 
 function App() {
+    const navigateTo = (() =>
+        userHelper.isAuthenticated ? '/dashboard' : '/login')();
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<SignUp />} />
+                <Route path="/" element={<Navigate to={navigateTo} />} />
+                <Route path="/register" element={<SignUp />} />
                 <Route path="/login" element={<SignIn />} />
                 <Route path="/dashboard" element={<PrivateOutlet />}>
                     {/* Define private routes here */}

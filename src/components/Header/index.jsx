@@ -11,7 +11,6 @@ export const Header = () => {
                 <span className="app-brand-logo demo">
                     <img
                         src="./assets/img/logo-dark.png"
-                        alt="Brand Logo"
                         className="img-fluid"
                     />
                 </span>
@@ -172,7 +171,6 @@ export const Header = () => {
                                     <img
                                         src="./assets/img/avatars/6-small.png"
                                         className="d-block ui-w-40 rounded-circle"
-                                        alt
                                     />
                                     <div className="media-body ml-3">
                                         <div className="text-dark line-height-condenced">
@@ -190,7 +188,6 @@ export const Header = () => {
                                     <img
                                         src="./assets/img/avatars/4-small.png"
                                         className="d-block ui-w-40 rounded-circle"
-                                        alt
                                     />
                                     <div className="media-body ml-3">
                                         <div className="text-dark line-height-condenced">
@@ -209,7 +206,6 @@ export const Header = () => {
                                     <img
                                         src="./assets/img/avatars/5-small.png"
                                         className="d-block ui-w-40 rounded-circle"
-                                        alt
                                     />
                                     <div className="media-body ml-3">
                                         <div className="text-dark line-height-condenced">
@@ -227,7 +223,6 @@ export const Header = () => {
                                     <img
                                         src="./assets/img/avatars/11-small.png"
                                         className="d-block ui-w-40 rounded-circle"
-                                        alt
                                     />
                                     <div className="media-body ml-3">
                                         <div className="text-dark line-height-condenced">
@@ -261,7 +256,6 @@ export const Header = () => {
                             <span className="d-inline-flex flex-lg-row-reverse align-items-center align-middle">
                                 <img
                                     src="./assets/img/avatars/1.png"
-                                    alt
                                     className="d-block ui-w-30 rounded-circle"
                                 />
                                 <span className="px-1 mr-lg-2 ml-2 ml-lg-0">
