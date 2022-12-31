@@ -11,9 +11,28 @@ import {
 import { SignIn } from './pages/auth/view/SignIn';
 import Dashboard from './pages/dashboard/view/Dashboard';
 import { userHelper } from './pages/user/helpers';
+import { Wrapper, WrapperContainer, WrapperInner } from './layouts/Wrapper';
+import Sidebar from './components/Sidebar';
+import { Header } from './components/Header';
+import { Main } from './layouts/Main';
+import Modal from './components/Modal';
 
 function PrivateOutlet() {
-    return userHelper.isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
+    return userHelper.isAuthenticated ? (
+        <Wrapper>
+            <WrapperInner>
+                <Sidebar />
+                <WrapperContainer>
+                    <Header />
+                    <Main>
+                        <Outlet />
+                    </Main>
+                </WrapperContainer>
+            </WrapperInner>
+        </Wrapper>
+    ) : (
+        <Navigate to="/login" />
+    );
 }
 
 function App() {
@@ -31,7 +50,7 @@ function App() {
                      * Rest of the application routes going to declare here
                      */}
                     <Route path="" element={<Dashboard />} />
-                    <Route path="user" element={<Dashboard />} />
+                    <Route path="user" element={<Modal />} />
                 </Route>
             </Routes>
         </BrowserRouter>
