@@ -50,7 +50,6 @@ function App() {
                      * Rest of the application routes going to declare here
                      */}
                     <Route path="" element={<Dashboard />} />
-                    <Route path="user" element={<Modal />} />
                 </Route>
             </Routes>
         </BrowserRouter>
