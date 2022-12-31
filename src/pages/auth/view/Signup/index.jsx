@@ -5,6 +5,7 @@ import { toastr } from '@/lib/toastr';
 import { Link, useNavigate } from 'react-router-dom';
 import LoadingSpinner from '@/lib/loadingSpinner';
 import { userHelper } from '@/pages/user/helpers';
+import Button from '@/components/Button';
 
 export const SignUp = () => {
     const navigateTo = useNavigate();
@@ -89,13 +90,7 @@ export const SignUp = () => {
                     />
                     <div className="clearfix" />
                 </div>
-                <button
-                    type="button"
-                    className="btn btn-primary btn-block mt-4"
-                    onClick={onSubmit}
-                >
-                    Sign Up
-                </button>
+                <Button onClick={onSubmit}>Sign Up</Button>
                 <div className="text-light small mt-4">
                     By clicking "Sign Up", you agree to our
                     <a href="javascript:void(0)">
