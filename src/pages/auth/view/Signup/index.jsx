@@ -2,11 +2,12 @@ import { useState } from 'react';
 import { authHelper } from '../../helpers';
 import AuthLayout from '../AuthLayout';
 import { toastr } from '@/lib/toastr';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import LoadingSpinner from '@/lib/loadingSpinner';
 import { userHelper } from '@/pages/user/helpers';
 
 export const SignUp = () => {
+    const navigateTo = useNavigate();
     const [formVal, setFormVal] = useState({
         username: '',
         email: '',
@@ -38,7 +39,8 @@ export const SignUp = () => {
                     email: formVal.email,
                 });
                 LoadingSpinner.hide();
-                toastr.success('Congratulations!', 'Successfully Sign up.');
+                toastr.success('Signed up successfully!', 'You can login now');
+                navigateTo('/login');
             },
             (err) => {
                 LoadingSpinner.hide();
