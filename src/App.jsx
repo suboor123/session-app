@@ -50,6 +50,14 @@ function App() {
                      * Rest of the application routes going to declare here
                      */}
                     <Route path="" element={<Dashboard />} />
+                    <Route
+                        path="user"
+                        element={
+                            <>
+                                <h1>USER</h1>
+                            </>
+                        }
+                    />
                 </Route>
             </Routes>
         </BrowserRouter>
